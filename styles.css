@@ -6,3 +6,7 @@ body {
         display: none;
     }
 }
+.delete {
+    cursor: pointer;
+    color: red;
+}

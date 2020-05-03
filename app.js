@@ -18,16 +18,16 @@ class UI {
             <td>${loan.name}</td>
             <td class="removing">${loan.aim}</td>
             <td>${loan.sum}</td>
-            <td>${loan.date1}</td>
+            <td class="removing">${loan.date1}</td>
             <td>${loan.date2}</td>
-            <td><a href="#" class="delete">X</td>
+            <td><a href="#" class="delete"><i class="fa fa-trash"></i></td>
         `;
         
         list.appendChild(row)
     }
     deleteLoan(target) {
-        if(target.className === 'delete') {
-            target.parentElement.parentElement.remove()
+        if(target.parentElement.className === 'delete') {
+            target.parentElement.parentElement.parentElement.remove()
         }
     }
     clearFields() {
@@ -125,7 +125,7 @@ document.getElementById('loan-list').addEventListener('click', function(e){
     ui.deleteLoan(e.target)
 
     //removing from local storage
-    Store.removeLoan(e.target.parentElement.previousElementSibling.textContent) 
+    Store.removeLoan(e.target.parentElement.parentElement.previousElementSibling.textContent) 
 
 
     e.preventDefault()
