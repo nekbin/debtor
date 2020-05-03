@@ -16,7 +16,7 @@ class UI {
     
         row.innerHTML = `
             <td>${loan.name}</td>
-            <td>${loan.aim}</td>
+            <td class="removing">${loan.aim}</td>
             <td>${loan.sum}</td>
             <td>${loan.date1}</td>
             <td>${loan.date2}</td>
